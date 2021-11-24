@@ -17,5 +17,9 @@ public class loadAr : MonoBehaviour
     public void playThings (){
         SceneManager.LoadScene(4);
     }
+    public void playEnAlphabet (){
+        SceneManager.LoadScene(5);
+    }
+
     
 }
