@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ar Alphabet/Ar Alphabet.unity
     guid: d057b670a37259f4d81047ec1b172509
   - enabled: 1
-    path: Assets/Scenes/Numbers/Numbers Game.unity
-    guid: f67a6ae7551ac74489359316512ab07f
-  - enabled: 1
     path: Assets/Scenes/Color/color.unity
     guid: 42d89b35b90963f4995581cc5ce84397
   - enabled: 1
@@ -23,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/En Alphabets/En Alphabets.unity
     guid: 818a6d0dbd2dffe449e3b6039d50f9a4
+  - enabled: 1
+    path: Assets/Scenes/Numbers/Numbers Game.unity
+    guid: f67a6ae7551ac74489359316512ab07f
+  - enabled: 1
+    path: Assets/Scenes/Numbers/1.unity
+    guid: 5062bb38bc739404e9a0c5ea5b1306ad
   m_configObjects: {}
