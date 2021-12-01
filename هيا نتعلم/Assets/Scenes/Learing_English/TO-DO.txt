@@ -1,0 +1,5 @@
+- Add Music
+- Add background, and style for buttons
+- Add menu to tell if wrong or right answers
+- Add menu to tell if no more questions, and asking for retry
+- Add voice when hover over the button, to spell the word
