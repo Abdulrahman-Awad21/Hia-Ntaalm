@@ -29,13 +29,15 @@ public struct FullQuestion
 
 public class Generator : MonoBehaviour
 {
-    public List<Question> questions    = new List<Question>(); // questions without right answerd questions, when empty them he answered all questions
-    public List<Question> AllQuestions = new List<Question>(); // always store all questions for taking random wrong answers
-    public FullQuestion   fullQuestion = new FullQuestion();   // structure contains image, right, and two wrong answers
+    private List<Question> questions    = new List<Question>(); // questions without right answerd questions, when empty them he answered all questions
+    private List<Question> AllQuestions = new List<Question>(); // always store all questions for taking random wrong answers
+    private FullQuestion   fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
     Button rightButton;
 
     private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
 
+    public AudioClip right, wrong;
+    AudioSource audioSource;
 
     void Start()
     {
@@ -43,6 +45,9 @@ public class Generator : MonoBehaviour
         AllQuestions = new List<Question>(questions);
         fullQuestion = newQuestion();
         assignValues(fullQuestion);
+
+        GameObject audio = GameObject.FindGameObjectWithTag("answerMusic");
+        audioSource = audio.GetComponent<AudioSource>();
     }
 
     public bool isRight(Button btn)
@@ -65,8 +70,7 @@ public class Generator : MonoBehaviour
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("button");
         Image img = image.GetComponent<Image>();
         img.sprite = Resources.Load<Sprite>(fullQuestion.question._srcImg); // extension shoudn't be written
-        Debug.Log(img.sprite);
-        Debug.Log(fullQuestion.question._srcImg);
+
 
         // select random value from temp, and assign it to button, produces random values for random buttons
         List<int> temp = new List<int> { 0, 1, 2 };
@@ -78,7 +82,7 @@ public class Generator : MonoBehaviour
         Button btn = buttons[index].GetComponent<Button>();
         btn.GetComponentInChildren<Text>().text = fullQuestion.wrongAnswer1; // this button is assigned to wrong answer
         btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(wrongAnswer); 
+        btn.onClick.AddListener(wrongAnswer);
 
         // assign button2
         rand = Random.Range(0, 2);
@@ -100,6 +104,11 @@ public class Generator : MonoBehaviour
 
     void rightAnswer()
     {
+        audioSource.Stop();
+        audioSource.clip = right;
+        audioSource.Play();
+
+
         Debug.Log("right");
         questions.Remove(fullQuestion.question);
         fullQuestion = newQuestion();
@@ -108,6 +117,10 @@ public class Generator : MonoBehaviour
 
     void wrongAnswer()
     {
+        audioSource.Stop();
+        audioSource.clip = wrong;
+        audioSource.Play();
+
         Debug.Log("wrong");
 
     }
@@ -120,6 +133,19 @@ public class Generator : MonoBehaviour
         }
         Debug.Log("----------------");
     }
+
+    List<Question> getAllOfType(Question q)
+    {
+        List<Question> result = new List<Question>();
+
+        for (int i = 0; i < AllQuestions.Count; i++)
+        {
+            if (AllQuestions[i]._type == q._type)
+                result.Add(AllQuestions[i]);
+        }
+
+        return result;
+    }
     public FullQuestion newQuestion()
     {
         FullQuestion fquestion = new FullQuestion(); // question with right, and two wrong answers
@@ -129,7 +155,7 @@ public class Generator : MonoBehaviour
 
             Question question = getRandome(temp); // select right answer
 
-            temp = new List<Question>(AllQuestions);
+            temp = getAllOfType(question);
             
             temp.Remove(question); // remove the right answer, to select two different wrong answers
 
