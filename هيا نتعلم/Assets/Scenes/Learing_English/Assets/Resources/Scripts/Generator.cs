@@ -5,12 +5,53 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+public struct Player
+{
+    static int generator = 0;
+
+    public int id;
+    public string playerName;
+    public int playerScore;
+    public int playerRightAnswers;
+    public int playerWrongAnswers;
+
+    public Player(string _name = "")
+    {
+        id = generator++;
+        playerName = _name;
+        playerScore = 0;
+        playerRightAnswers = 0;
+        playerWrongAnswers = 0;
+    }
+
+    public Player(Player p)
+    {
+        id = p.id;
+        playerName = p.playerName;
+        playerScore = p.playerScore;
+        playerRightAnswers = p.playerRightAnswers;
+        playerWrongAnswers = p.playerWrongAnswers;
+    }
+
+    public void increaseScore()
+    { 
+        playerScore++;
+        playerRightAnswers++;
+    }
+
+    public void decreaseScore()
+    {
+        playerScore--;
+        playerWrongAnswers++;
+    }
+}
+
 public struct Question
 {
     public string _name;
     public string _srcImg;
     public string _type;
-    
+
     public Question(string name = "", string srcImg = "", string type = "")
     {
         _name = name;
@@ -29,18 +70,37 @@ public struct FullQuestion
 
 public class Generator : MonoBehaviour
 {
-    private List<Question> questions    = new List<Question>(); // questions without right answerd questions, when empty them he answered all questions
+    private List<Question> questions = new List<Question>(); // questions without right answerd questions, when empty them he answered all questions
     private List<Question> AllQuestions = new List<Question>(); // always store all questions for taking random wrong answers
-    private FullQuestion   fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
+    private FullQuestion fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
     Button rightButton;
 
-    private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
-
+        private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
     public AudioClip right, wrong;
     AudioSource audioSource;
 
+    private playerControl playerControl = new playerControl();
+    private List<Player> players = new List<Player>();
+    int currentPlayer = -1;
+
+
+    GameObject pickPlayers;
+    GameObject mainCanvas;
     void Start()
     {
+        pickPlayers = GameObject.FindGameObjectWithTag("pickPlayersPanel");
+        mainCanvas = GameObject.FindGameObjectWithTag("mainCanvas");
+
+        playerControl.start();
+    }
+
+    public void startGame()
+    {
+        players = playerControl.addPlayers();
+        pickPlayers.SetActive(false);
+        mainCanvas.SetActive(true);
+        playerControl.displayPlayers(players);
+
         getImages();
         AllQuestions = new List<Question>(questions);
         fullQuestion = newQuestion();
@@ -50,21 +110,10 @@ public class Generator : MonoBehaviour
         audioSource = audio.GetComponent<AudioSource>();
     }
 
-    public bool isRight(Button btn)
-    {
-        if (rightButton == btn)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
     public void assignValues(FullQuestion fullQuestion)
     {
+        currentPlayer = (currentPlayer + 1) % players.Count;
+        playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
         // assign image
         GameObject image = GameObject.FindGameObjectWithTag("Gimage");
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("button");
@@ -82,7 +131,7 @@ public class Generator : MonoBehaviour
         Button btn = buttons[index].GetComponent<Button>();
         btn.GetComponentInChildren<Text>().text = fullQuestion.wrongAnswer1; // this button is assigned to wrong answer
         btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(wrongAnswer);
+        btn.onClick.AddListener(() => wrongAnswer());
 
         // assign button2
         rand = Random.Range(0, 2);
@@ -91,15 +140,15 @@ public class Generator : MonoBehaviour
         btn = buttons[index].GetComponent<Button>();
         btn.GetComponentInChildren<Text>().text = fullQuestion.wrongAnswer2; // this button is assigned to wrong answer
         btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(wrongAnswer);
+        btn.onClick.AddListener(() => wrongAnswer());
 
         // assign button3
         index = temp[0];
         btn = buttons[index].GetComponent<Button>();
         btn.GetComponentInChildren<Text>().text = fullQuestion.question._name; // this button is always true
         rightButton = btn; // save it for later usage/comparison for checking answer 
-        btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(rightAnswer);
+        btn.onClick.RemoveAllListeners();   
+        btn.onClick.AddListener(() => rightAnswer());
     }
 
     void rightAnswer()
@@ -108,11 +157,17 @@ public class Generator : MonoBehaviour
         audioSource.clip = right;
         audioSource.Play();
 
-
+        Player player = new Player(players[currentPlayer]);
+        player.increaseScore();
+        players[currentPlayer] = player;
+        playerControl.updatePlayerScore(players[currentPlayer]);
+        playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
         Debug.Log("right");
         questions.Remove(fullQuestion.question);
         fullQuestion = newQuestion();
         assignValues(fullQuestion);
+
+        
     }
 
     void wrongAnswer()
@@ -121,8 +176,13 @@ public class Generator : MonoBehaviour
         audioSource.clip = wrong;
         audioSource.Play();
 
-        Debug.Log("wrong");
 
+        Player player = new Player(players[currentPlayer]);
+        player.decreaseScore();
+        players[currentPlayer] = player;
+        playerControl.updatePlayerScore(players[currentPlayer]);
+        playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
+        Debug.Log("wrong");
     }
 
     void print(List<Question> temp)
@@ -156,12 +216,12 @@ public class Generator : MonoBehaviour
             Question question = getRandome(temp); // select right answer
 
             temp = getAllOfType(question);
-            
+
             temp.Remove(question); // remove the right answer, to select two different wrong answers
 
             Question wrongAnswer1 = getRandome(temp);
             temp.Remove(wrongAnswer1);
-        
+
             Question wrongAnswer2 = getRandome(temp);
 
             fquestion.question = question;
@@ -176,7 +236,7 @@ public class Generator : MonoBehaviour
         }
         return fquestion;
     }
-    
+
     Question getRandome(List<Question> temp)
     {
         int rand = Random.Range(0, temp.Count);
@@ -193,7 +253,7 @@ public class Generator : MonoBehaviour
         foreach (string subDirectorie in subDirectories)
         {
             string[] sourceImages = Directory.GetFiles(subDirectorie, "*.jpg");
-            
+
             string type = Path.GetFileName(subDirectorie);
             foreach (string sourceImage in sourceImages)
             {
@@ -201,7 +261,7 @@ public class Generator : MonoBehaviour
                 srcImg = srcImg.Replace(".jpg", "");
                 srcImg = srcImg.Replace(mainDirectory, "Images");
                 string name = Path.GetFileNameWithoutExtension(srcImg);
-                
+
                 Question question = new Question(name, srcImg, type);
                 questions.Add(question);
             }
