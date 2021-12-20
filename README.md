@@ -13,6 +13,7 @@ Project: Game to teach Childrens English and Numbers
 Members:
   - Abdo Awad     Computer Science Student
   - Ahmed Mahmoud Computer Science Student
+  - Abdo Mustafa  Computer Science Student
   - Hiesham Alaa  Computer Science Student
   - Hazem Azzam   Computer Science and Pure Mathematics Student
   - Omar Khames   Computer Science and Pure Mathematics Student
