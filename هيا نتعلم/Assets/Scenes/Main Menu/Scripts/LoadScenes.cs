@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class loadAr : MonoBehaviour
+public class LoadScenes : MonoBehaviour
 {
     public void playArAlphabet (){
         SceneManager.LoadScene(1);
     }
-    public void playNumbers (){
+    public void playColors (){
         SceneManager.LoadScene(2);
     }
-    public void playColors (){
+    public void playThings (){
         SceneManager.LoadScene(3);
     }
-    public void playThings (){
+    public void playEnAlphabets (){
         SceneManager.LoadScene(4);
     }
-    public void playEnAlphabet (){
+    public void playNumbers (){
         SceneManager.LoadScene(5);
+    }
+     public void playStory (){
+        SceneManager.LoadScene(6);
     }
 
     

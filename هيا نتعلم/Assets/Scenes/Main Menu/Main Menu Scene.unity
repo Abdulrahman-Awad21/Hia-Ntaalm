@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.50494, y: 0.000015258789}
+  m_AnchoredPosition: {x: -508, y: 0.000015258789}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402254696
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: playThings
         m_Mode: 1
         m_Arguments:
@@ -514,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.50494, y: -192}
+  m_AnchoredPosition: {x: -508, y: -192}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895442014
@@ -562,8 +562,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
-        m_MethodName: playEnAlphabet
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
+        m_MethodName: playEnAlphabets
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -646,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184, y: -192}
+  m_AnchoredPosition: {x: -322.49506, y: -192}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148914818
@@ -694,8 +694,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
-        m_MethodName: playEnAlphabet
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
+        m_MethodName: playStory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5165899fe4df5d4f84bc15f16c28f27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a7e4134ae003e041a3b0abfc5b7b9f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -778,7 +778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.50494, y: 182.53308}
+  m_AnchoredPosition: {x: -508, y: 182.53308}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471092092
@@ -826,7 +826,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: playArAlphabet
         m_Mode: 1
         m_Arguments:
@@ -1054,7 +1054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.505, y: 182.52997}
+  m_AnchoredPosition: {x: -315.00006, y: 182.52997}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727732620
@@ -1102,7 +1102,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: playNumbers
         m_Mode: 1
         m_Arguments:
@@ -1468,7 +1468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.505, y: 0.000030517578}
+  m_AnchoredPosition: {x: -315.00006, y: 0.000030517578}
   m_SizeDelta: {x: 143.2305, y: 148.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2058692761
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2101023163}
-        m_TargetAssemblyTypeName: loadAr, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: playColors
         m_Mode: 1
         m_Arguments:
