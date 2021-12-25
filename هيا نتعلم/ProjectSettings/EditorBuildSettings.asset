@@ -15,14 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Color/color.unity
     guid: 42d89b35b90963f4995581cc5ce84397
   - enabled: 1
-    path: Assets/Scenes/Things/Things.unity
-    guid: ed65a5ba3320d2c43b84b0a1053340a2
+    path: Assets/Scenes/Learing_English/Assets/Scenes/SceneV2.unity
+    guid: e8b948f129a8cd94a8ca8677c6a1eaa9
   - enabled: 1
     path: Assets/Scenes/En Alphabets/En Alphabets.unity
     guid: 818a6d0dbd2dffe449e3b6039d50f9a4
   - enabled: 1
     path: Assets/Scenes/Numbers/Numbers Game.unity
     guid: f67a6ae7551ac74489359316512ab07f
+  - enabled: 1
+    path: Assets/Scenes/Story/Story Game.unity
+    guid: 9290944971906a14b9510bccfd54599c
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
