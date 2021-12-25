@@ -6,12 +6,24 @@ using UnityEngine.UI;
 
 public class Speech : MonoBehaviour, IPointerEnterHandler
 {
+    int counter = 0;
+
+    //public void OnMouseDown()
+    //{
+    //    string text = GetComponentInChildren<Text>().text;
+    //    string url1 = "https://eng.kumandang.com/tts.php?text=" + text;
+    //    string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
+    //    StartCoroutine(DownloadAndPlay(url1));
+    //}
+
     [System.Obsolete]
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        string text = GetComponentInChildren<Text>().text;
-        string url1 = "https://eng.kumandang.com/tts.php?text=" + text;
-        string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
+        string name = GetComponentInParent<Button>().GetComponentInChildren<Text>().text;
+        //Debug.Log(name);
+        //string text = GetComponentInChildren<Text>().text;
+        string url1 = "https://eng.kumandang.com/tts.php?text=" + name;
+        //string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
         StartCoroutine(DownloadAndPlay(url1));
     }
 
