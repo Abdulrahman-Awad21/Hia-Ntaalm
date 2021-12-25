@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 009ab4561146866469762748547a2f99
-=======
-guid: 6a609831992c5354d927285b30049421
->>>>>>> c15b9c83dbd1b121db45962c83e12748703b2a7f
+guid: 1d4e84a0f4d76cb4491db62cda7d0829
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -36,10 +32,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -78,6 +76,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -212,9 +211,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      output-onlinepngtools_0: 8085268007778768734
+      output-onlinepngtools_2: 4548562631146149808
+      output-onlinepngtools_3: 1542341216846488844
+      output-onlinepngtools_1: 5803401481538434042
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
