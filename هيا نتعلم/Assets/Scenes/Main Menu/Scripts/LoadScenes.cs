@@ -23,6 +23,9 @@ public class LoadScenes : MonoBehaviour
      public void playStory (){
         SceneManager.LoadScene("Story Game");
     }
+    public void playRunner (){
+        SceneManager.LoadScene("UI");
+    }
 
     
 }
