@@ -6,22 +6,22 @@ using UnityEngine.SceneManagement;
 public class LoadScenes : MonoBehaviour
 {
     public void playArAlphabet (){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Ar Alphabet");
     }
     public void playColors (){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Color");
     }
     public void playThings (){
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("SceneV2");
     }
     public void playEnAlphabets (){
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("En Alphabets");
     }
     public void playNumbers (){
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("Numbers Game");
     }
      public void playStory (){
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("Story Game");
     }
 
     
