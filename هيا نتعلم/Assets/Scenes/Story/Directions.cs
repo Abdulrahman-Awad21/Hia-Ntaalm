@@ -7,7 +7,7 @@ public class Directions : MonoBehaviour
 {
 
     private GameObject[] pages = new GameObject[36];
-    private int currentPage = 37;
+    private int currentPage = 0;
 
     void Start(){
         for (int i = 1; i <= 36; i++){
@@ -17,15 +17,21 @@ public class Directions : MonoBehaviour
         for (int i = 0; i < 36; i++){
             pages[i].SetActive(false);
         }
+    }
 
+    public void home() 
+    {
+        SceneManager.LoadScene("Main Menu Scene");
     }
 
     public void backMenu() {
         SceneManager.LoadScene("Story Game");
     }
 
-    public void startStroy(int c)
+    public void startStory(int c)
     {
+        GameObject.Find("white").SetActive(false);
+        GameObject.Find("white(1)").SetActive(false);
         GameObject.Find("FingerTip").SetActive(false);
         GameObject.Find("GoldenAxe").SetActive(false);
         GameObject.Find("RabbitTirtle").SetActive(false);
@@ -38,22 +44,22 @@ public class Directions : MonoBehaviour
     
     public void setFTStory()
     {
-        startStroy(0);
+        startStory(0);
     }
     
     public void setGAStory()
     {
-        startStroy(1);
+        startStory(1);
     }
    
     public void setRTStory()
     {
-        startStroy(2);
+        startStory(2);
     }
     
     public void setTPStory()
     {
-        startStroy(3);
+        startStory(3);
     }
 
     public void nextActive(){
@@ -67,16 +73,13 @@ public class Directions : MonoBehaviour
     }
     
     public void previousActive(){
-        if (currentPage > 3 && currentPage!=37)
+        if (currentPage > 3 )
         {
             pages[currentPage - 4].SetActive(true);
             pages[currentPage].SetActive(false);
             currentPage -= 4;
         }
-        else
-        {
-            SceneManager.LoadScene("Story Game");
-        }
+        else { }
     }
 
 }
