@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Nav : MonoBehaviour{
 
   private GameObject [] gO = new GameObject[29];
@@ -9,10 +10,15 @@ public class Nav : MonoBehaviour{
   
 
 
+        public void home()
+        {
+            SceneManager.LoadScene("Main Menu Scene");
+        }
   void Start(){
 
-      
-      for (int i = 0; i < 29; i++){ 
+
+
+        for (int i = 0; i < 29; i++){ 
         gO[i] = GameObject.Find("p"+i);
       }
       for (int i = 1; i<29 ; i++){
@@ -39,4 +45,5 @@ public class Nav : MonoBehaviour{
     }
     else{}
   }
+      
 }
