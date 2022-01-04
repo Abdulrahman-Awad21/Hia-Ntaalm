@@ -16,7 +16,7 @@ public class UI : MonoBehaviour
     }
 
     public void Quit(){
-
+        SceneManager.LoadScene("Main Menu Scene");
         // load the original ui of the project
     }
 }
