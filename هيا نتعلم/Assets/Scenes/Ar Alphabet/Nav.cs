@@ -46,6 +46,10 @@ public class Nav : MonoBehaviour{
     else{}
   }
 
-    
+    public void Restart()
+    {
+        x = 0;
+        SceneManager.LoadScene("Ar Alphabet");
+    }
 
 }
