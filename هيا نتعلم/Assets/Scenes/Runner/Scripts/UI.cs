@@ -12,7 +12,7 @@ public class UI : MonoBehaviour
     }
 
     public void Play(){
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Loading");
     }
 
     public void Quit(){

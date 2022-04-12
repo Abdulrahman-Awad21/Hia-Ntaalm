@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu/Main Menu Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Ar Alphabet/Ar Alphabet.unity
-    guid: d057b670a37259f4d81047ec1b172509
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Color/color.unity
     guid: 42d89b35b90963f4995581cc5ce84397
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Runner/Loading.unity
+    guid: 4d24ac3507301e943bc0c3bd4ad413da
   m_configObjects: {}

@@ -12,16 +12,18 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         float directionY = Input.GetAxisRaw("Vertical");
-        playerDirection = new Vector2(0,directionY).normalized;
+        float directionX = Input.GetAxisRaw("Horizontal");
+        playerDirection = new Vector2(directionX, directionY).normalized;
     }
-    void FixedUpdate(){
-        rb.velocity = new Vector2(0,playerDirection.y * playerSpeed);
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
     }
 }
