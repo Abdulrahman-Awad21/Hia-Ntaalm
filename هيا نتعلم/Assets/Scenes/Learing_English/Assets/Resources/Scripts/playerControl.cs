@@ -18,7 +18,7 @@ public class playerControl : MonoBehaviour
         //currentPlayerWrongAnswers = GameObject.Find("currentPlayerWrongAnswers").GetComponent<Text>().text;
         playersScore = GameObject.FindGameObjectsWithTag("playersScore");
         playersName = GameObject.FindGameObjectsWithTag("playersName");
-        Debug.Log(playersName);
+            
 
         GameObject mainCanvas = GameObject.FindGameObjectWithTag("mainCanvas");
         mainCanvas.SetActive(false);

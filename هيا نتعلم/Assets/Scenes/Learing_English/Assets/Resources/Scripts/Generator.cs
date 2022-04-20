@@ -101,7 +101,8 @@ public class Generator : MonoBehaviour
         mainCanvas.SetActive(true);
         playerControl.displayPlayers(players);
 
-        getImages();
+        loadFiles();
+        //getImages();
         AllQuestions = new List<Question>(questions);
         fullQuestion = newQuestion();
         assignValues(fullQuestion);
@@ -164,7 +165,7 @@ public class Generator : MonoBehaviour
         playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
         Debug.Log("right");
         questions.Remove(fullQuestion.question);
-        fullQuestion = newQuestion();
+        fullQuestion = newDifferentQuestion();
         assignValues(fullQuestion);
 
         
@@ -206,6 +207,19 @@ public class Generator : MonoBehaviour
 
         return result;
     }
+    List<Question> getAllOfDifferentType(Question q)
+    {
+        List<Question> result = new List<Question>();
+
+        for (int i = 0; i < AllQuestions.Count; i++)
+        {
+            if (AllQuestions[i]._type != q._type)
+                result.Add(AllQuestions[i]);
+        }
+
+        return result;
+    }
+
     public FullQuestion newQuestion()
     {
         FullQuestion fquestion = new FullQuestion(); // question with right, and two wrong answers
@@ -213,11 +227,11 @@ public class Generator : MonoBehaviour
         {
             List<Question> temp = new List<Question>(questions);
 
-            Question question = getRandome(temp); // select right answer
+            Question question = getRandome(temp); // select random question
 
             temp = getAllOfType(question);
 
-            temp.Remove(question); // remove the right answer, to select two different wrong answers
+            temp.Remove(question); // remove selected question, and select 2 arbitrary questions
 
             Question wrongAnswer1 = getRandome(temp);
             temp.Remove(wrongAnswer1);
@@ -232,34 +246,150 @@ public class Generator : MonoBehaviour
         else
         {
             Debug.Log("No more!");
-            getImages();
+            //getImages();
+            loadFiles();
+        }
+        return fquestion;
+    }
+
+    List<string> allTypes = new List<string>();
+
+    public FullQuestion newDifferentQuestion()
+    {
+        List<string> types = new List<string>(allTypes);
+        Debug.Log("sdsd=" + types.Count);
+
+        FullQuestion fquestion = new FullQuestion(); // question with right, and two wrong answers
+        if (questions.Count != 0)
+        {
+            List<Question> temp = new List<Question>(questions);
+
+            Question question = getRandome(temp, types); // select random question
+            types.Remove(question._type);
+
+            Question wrongAnswer1 = getRandome(temp, types);
+
+            types.Remove(wrongAnswer1._type);
+
+
+            Question wrongAnswer2 = getRandome(temp, types);
+
+            fquestion.question = question;
+            fquestion.wrongAnswer1 = wrongAnswer1._name;
+            fquestion.wrongAnswer2 = wrongAnswer2._name;
+
+        }
+        else
+        {
+            Debug.Log("No more!");
+            //getImages();
+            loadFiles();
         }
         return fquestion;
     }
 
     Question getRandome(List<Question> temp)
     {
+        Debug.Log(temp.Count);
         int rand = Random.Range(0, temp.Count);
         Question ques = temp[rand];
 
         return ques;
     }
 
+    Question getRandome(List<Question> temp, List<string> types)
+    {
+        Question ques = temp[0];
+        foreach(Question q in temp)
+        {
+            bool different = false;
+            foreach(string type in types)
+            {
+                if (q._type == type)
+                {
+                    different = false;
+                }
+                else
+                {
+                    different = true;
+                }
+
+            }
+            if (different == true)
+                return q;
+        }
+        return ques;
+    }
+
+    public void loadFiles()
+    {
+        string[] folders = Directory.GetDirectories(mainDirectory);
+        foreach (string subFolder in folders)
+        {
+            string[] subSubFolders = Directory.GetDirectories(subFolder);
+            if (subSubFolders.Length > 0)
+            {
+                foreach (string subSubFolder in subSubFolders)
+                {
+                    //Debug.Log(subSubFolder);
+                    string[] sourceImages = Directory.GetFiles(subSubFolder, "*.jpg");
+          
+                    string type = Path.GetFileName(subSubFolder);
+
+                    allTypes.Add(type);
+
+                    foreach (string sourceImage in sourceImages)
+                    {
+                        string srcImg = sourceImage;
+                        
+                        srcImg = srcImg.Replace(".jpg", "");
+                        srcImg = srcImg.Replace(mainDirectory, "Images");
+                        string name = Path.GetFileName(subSubFolder);
+
+                        Question question = new Question(name, srcImg, type);
+                        questions.Add(question);
+                    }
+
+                }
+            }
+            else
+            {
+                string[] sourceImages = Directory.GetFiles(subFolder, "*.jpg");
+                string type = Path.GetFileName(subFolder);
+                foreach (string sourceImage in sourceImages)
+                {
+                    string srcImg = sourceImage;
+                    srcImg = srcImg.Replace(".jpg", "");
+                    srcImg = srcImg.Replace(mainDirectory, "Images");
+                    string name = Path.GetFileNameWithoutExtension(srcImg);
+                    Question question = new Question(name, srcImg, type);
+                    questions.Add(question);
+                }
+            }
+        }
+    }
+
     public void getImages()
     {
         // access image directory, for each directory get images info
         string[] subDirectories = Directory.GetDirectories(mainDirectory);
-
+        
         foreach (string subDirectorie in subDirectories)
         {
+            
+            
             string[] sourceImages = Directory.GetFiles(subDirectorie, "*.jpg");
 
             string type = Path.GetFileName(subDirectorie);
             foreach (string sourceImage in sourceImages)
             {
+                
                 string srcImg = sourceImage;
                 srcImg = srcImg.Replace(".jpg", "");
                 srcImg = srcImg.Replace(mainDirectory, "Images");
+
+                Debug.Log(srcImg);
+
                 string name = Path.GetFileNameWithoutExtension(srcImg);
 
                 Question question = new Question(name, srcImg, type);
