@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Speech : MonoBehaviour, IPointerEnterHandler
 {
     int counter = 0;
-
+    private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Sounds/";
     //public void OnMouseDown()
     //{
     //    string text = GetComponentInChildren<Text>().text;
@@ -15,17 +15,24 @@ public class Speech : MonoBehaviour, IPointerEnterHandler
     //    string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
     //    StartCoroutine(DownloadAndPlay(url1));
     //}
-
     [System.Obsolete]
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         string name = GetComponentInParent<Button>().GetComponentInChildren<Text>().text;
-        //Debug.Log(name);
-        //string text = GetComponentInChildren<Text>().text;
-        string url1 = "https://eng.kumandang.com/tts.php?text=" + name;
-        //string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
+        string url1 = mainDirectory + name + ".mp3";
+        Debug.Log(url1);
         StartCoroutine(DownloadAndPlay(url1));
     }
+    //[System.Obsolete]
+    //public void OnPointerEnter(PointerEventData pointerEventData)
+    //{
+    //    string name = GetComponentInParent<Button>().GetComponentInChildren<Text>().text;
+    //    //Debug.Log(name);
+    //    //string text = GetComponentInChildren<Text>().text;
+    //    string url1 = "https://eng.kumandang.com/tts.php?text=" + name;
+    //    //string url2 = "https://translate.google.com.eg/?hl=ar&sl=en&tl=en&text="+text+"&op=translate";
+    //    StartCoroutine(DownloadAndPlay(url1));
+    //}
 
     [System.Obsolete]
     IEnumerator DownloadAndPlay(string url)
@@ -35,6 +42,7 @@ public class Speech : MonoBehaviour, IPointerEnterHandler
         GameObject gameObject = GameObject.FindGameObjectWithTag("speech");
         AudioSource audio = gameObject.GetComponent<AudioSource>();
         audio.clip = www.GetAudioClip(false, false, AudioType.UNKNOWN);
+        //audio.clip = (AudioClip) Resources.Load(url);
         audio.Play();
     }
 }

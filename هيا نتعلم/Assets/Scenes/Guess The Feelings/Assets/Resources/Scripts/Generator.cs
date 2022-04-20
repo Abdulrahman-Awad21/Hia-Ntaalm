@@ -75,7 +75,7 @@ public class Generator : MonoBehaviour
     private FullQuestion fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
     Button rightButton;
 
-        private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
+    private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
     public AudioClip right, wrong;
     AudioSource audioSource;
 
@@ -104,7 +104,8 @@ public class Generator : MonoBehaviour
         loadFiles();
         //getImages();
         AllQuestions = new List<Question>(questions);
-        fullQuestion = newQuestion();
+        //fullQuestion = newQuestion();
+        fullQuestion = newDifferentQuestion();
         assignValues(fullQuestion);
 
         GameObject audio = GameObject.FindGameObjectWithTag("answerMusic");
@@ -163,7 +164,7 @@ public class Generator : MonoBehaviour
         players[currentPlayer] = player;
         playerControl.updatePlayerScore(players[currentPlayer]);
         playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
-        Debug.Log("right");
+        
         questions.Remove(fullQuestion.question);
         fullQuestion = newDifferentQuestion();
         assignValues(fullQuestion);
@@ -183,7 +184,7 @@ public class Generator : MonoBehaviour
         players[currentPlayer] = player;
         playerControl.updatePlayerScore(players[currentPlayer]);
         playerControl.displayCurrentPlayerInfo(players[currentPlayer]);
-        Debug.Log("wrong");
+        
     }
 
     void print(List<Question> temp)
@@ -243,10 +244,8 @@ public class Generator : MonoBehaviour
             fquestion.wrongAnswer2 = wrongAnswer2._name;
 
         }
-        else
+        else if (questions.Count == 1)
         {
-            Debug.Log("No more!");
-            //getImages();
             loadFiles();
         }
         return fquestion;
@@ -257,27 +256,29 @@ public class Generator : MonoBehaviour
     public FullQuestion newDifferentQuestion()
     {
         List<string> types = new List<string>(allTypes);
-        Debug.Log("sdsd=" + types.Count);
 
         FullQuestion fquestion = new FullQuestion(); // question with right, and two wrong answers
-        if (questions.Count != 0)
+        if (questions.Count >= 2)
         {
             List<Question> temp = new List<Question>(questions);
 
-            Question question = getRandome(temp, types); // select random question
+            Question question = getRandome(temp); // select random question
             types.Remove(question._type);
 
-            Question wrongAnswer1 = getRandome(temp, types);
+            string type1 = types[0];
+            string type2 = types[1];
 
-            types.Remove(wrongAnswer1._type);
+            //Question wrongAnswer1 = getRandome(temp, types);
+            //types.Remove(wrongAnswer1._type);
 
 
-            Question wrongAnswer2 = getRandome(temp, types);
+            //Question wrongAnswer2 = getRandome(temp, types);
 
+            //Debug.Log("-->" + " " + question._type + " - " + type1);
             fquestion.question = question;
-            fquestion.wrongAnswer1 = wrongAnswer1._name;
-            fquestion.wrongAnswer2 = wrongAnswer2._name;
-
+            fquestion.wrongAnswer1 = type1;
+            fquestion.wrongAnswer2 = type2;
+            
         }
         else
         {
@@ -290,22 +291,24 @@ public class Generator : MonoBehaviour
 
     Question getRandome(List<Question> temp)
     {
-        Debug.Log(temp.Count);
+        //Debug.Log(temp.Count);
         int rand = Random.Range(0, temp.Count);
-        Question ques = temp[rand];
+        Question ques = new Question(temp[rand]._name, temp[rand]._srcImg, temp[rand]._type);
 
         return ques;
     }
 
     Question getRandome(List<Question> temp, List<string> types)
     {
-        Question ques = temp[0];
+        //Debug.Log(types.Count);
+        int rand = Random.Range(0, temp.Count);
+        Question ques = new Question(temp[rand]._name, temp[rand]._srcImg, temp[rand]._type);
         foreach(Question q in temp)
         {
             bool different = false;
             foreach(string type in types)
             {
-                if (q._type == type)
+                if (q._type != type)
                 {
                     different = false;
                 }
@@ -313,11 +316,13 @@ public class Generator : MonoBehaviour
                 {
                     different = true;
                 }
+                if (different == true)
+                    return q;
 
             }
-            if (different == true)
-                return q;
+
         }
+        //Debug.Log("asdasdas="+rand);
         return ques;
     }
 
@@ -345,7 +350,7 @@ public class Generator : MonoBehaviour
                         srcImg = srcImg.Replace(".jpg", "");
                         srcImg = srcImg.Replace(mainDirectory, "Images");
                         string name = Path.GetFileName(subSubFolder);
-
+                        Debug.Log(name + " " + srcImg + " " + type);
                         Question question = new Question(name, srcImg, type);
                         questions.Add(question);
                     }
