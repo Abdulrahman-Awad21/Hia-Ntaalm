@@ -15,4 +15,10 @@ Games:
     + Display Pictures of Fruits or Animals, and 3 Buttons one Button contains the right Description of the picture, and the others is wrong
       so the children must select only one button which descripes the Picture
     + the purpose of this game is to teach the child english words to descripe his feeling or his needs
+    + Game changeed to 'Guess the Feeling' 20/04/2022
+    + Guess The Feelings, is a game where you have to guess the right feeling, 
+      it is a competitive game which allow you to play with maximum 4 players
+      and for each right guess you get 1 score, and lose 1 score for the wrong guess,
+      game has no ending as it repeats it self
+      the game is designed for autisms kids to help them express their feeling
     + Created By Hazem Azzam
