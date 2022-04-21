@@ -75,7 +75,7 @@ public class Generator : MonoBehaviour
     private FullQuestion fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
     Button rightButton;
 
-    private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Images";
+    private string mainDirectory = "Assets/Scenes/Guess The Feelings/Assets/Resources/Images";
     public AudioClip right, wrong;
     AudioSource audioSource;
 
