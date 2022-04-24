@@ -618,6 +618,10 @@ PrefabInstance:
       propertyPath: speed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8201933670876968318, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968319, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_RootOrder
       value: 6
