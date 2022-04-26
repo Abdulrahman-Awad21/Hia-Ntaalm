@@ -21,10 +21,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void move(){
-        if (horizintalValue >0)
+        if (horizintalValue >0){
             playerAnimator.SetBool("Walking Right" , true);
-        else if (horizintalValue <0)
+            
+            }
+        else if (horizintalValue <0){
             playerAnimator.SetBool("Walking Left" , true);
+            
+            }
         else{ 
             playerAnimator.SetBool("Walking Right" , false);
             playerAnimator.SetBool("Walking Left" , false);
