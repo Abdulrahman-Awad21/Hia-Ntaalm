@@ -15,7 +15,7 @@ public class LoadSituations : MonoBehaviour
     }
     public void playStreet()
     {
-        SceneManager.LoadScene("Streat");
+        SceneManager.LoadScene("Traffic Light");
     }
 
 }
