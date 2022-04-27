@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    public bool street = false ,icecream = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") ){
-            SceneManager.LoadScene("ThrowRubbish");
+
+            if (street){
+                SceneManager.LoadScene("ThrowRubbish");
+                }
+            else if (icecream){
+                Debug.Log("Icecream");
+                SceneManager.LoadScene("Traffic Light");
+                }
         }
     }
 }
