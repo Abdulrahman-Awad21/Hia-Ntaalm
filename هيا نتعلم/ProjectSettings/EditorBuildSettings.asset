@@ -36,6 +36,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Situations/Situations.unity
     guid: 50b1416323de66b449f6743e1f7a3be8
   - enabled: 1
+    path: Assets/Scenes/Situations/Levels/School/School.unity
+    guid: 67763d714775a564cbe9b38d4bcc04dc
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/home/home.unity
+    guid: 8eca52a56993ee448b140c6be680873b
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/Street/Scene/Traffic Light.unity
+    guid: 7f62d5b823ad02f43a33e81cb3b27dab
+  - enabled: 1
     path: Assets/Scenes/Situations/Levels/Street/Scene/ThrowRubbish.unity
     guid: 3bba0b624e0a52a44b12cbc763491f45
   m_configObjects: {}
