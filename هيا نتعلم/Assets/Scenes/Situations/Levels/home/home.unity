@@ -205,13 +205,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003663198}
     m_Modifications:
+    - target: {fileID: 1941937289, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968312, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_Name
       value: Boy
       objectReference: {fileID: 0}
+    - target: {fileID: 8201933670876968316, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968318, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968319, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_RootOrder
@@ -357,6 +365,7 @@ GameObject:
   - component: {fileID: 121470276}
   - component: {fileID: 121470278}
   - component: {fileID: 121470277}
+  - component: {fileID: 121470279}
   m_Layer: 5
   m_Name: glass
   m_TagString: Untagged
@@ -421,6 +430,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121470275}
   m_CullTransparentMesh: 1
+--- !u!114 &121470279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121470275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51ed9f7dc879c944a140955186f09d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &182710118
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,13 +890,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1101353580}
     m_Modifications:
+    - target: {fileID: 1941937289, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968312, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_Name
       value: Boy
       objectReference: {fileID: 0}
+    - target: {fileID: 8201933670876968316, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968318, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968319, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_RootOrder
@@ -1276,6 +1305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 510877880}
     m_Modifications:
+    - target: {fileID: 1941937289, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968312, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_Name
       value: Boy
@@ -1284,9 +1317,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8201933670876968316, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968318, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8201933670876968319, guid: 6267a5536cf8f9740be0edb57ebc8fde, type: 3}
       propertyPath: m_RootOrder
@@ -1899,6 +1936,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361114666}
   m_CullTransparentMesh: 1
+--- !u!1 &1404609482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404609484}
+  - component: {fileID: 1404609483}
+  m_Layer: 0
+  m_Name: Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1404609483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404609482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8069acc5d25ee418eb53124af4b788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1404609484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404609482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469119585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2382,7 @@ GameObject:
   - component: {fileID: 1739062377}
   - component: {fileID: 1739062376}
   - component: {fileID: 1739062379}
+  - component: {fileID: 1739062380}
   m_Layer: 0
   m_Name: PopUp
   m_TagString: Untagged
@@ -2410,6 +2491,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1739062380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739062374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51ed9f7dc879c944a140955186f09d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760383145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,7 +3379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2003663198
 Transform:
   m_ObjectHideFlags: 0
