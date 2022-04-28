@@ -11,13 +11,19 @@ public class GroundTriger : MonoBehaviour
     // Start is called before the first frame update
 
     
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator  OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") )    {
             
             myAnimationContoller.SetBool("Happy Jump",true);
+            yield return (new WaitForSeconds(1.5f));
+            myAnimationContoller.SetBool("Happy Jump",false);
+
+            
         }
     }
+
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") )    {
