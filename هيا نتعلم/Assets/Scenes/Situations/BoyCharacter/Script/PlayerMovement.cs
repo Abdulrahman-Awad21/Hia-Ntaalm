@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed ;
+    [SerializeField]
+    float speed ;
     private Animator playerAnimator;
     private  float horizintalValue;
 
@@ -22,14 +23,15 @@ public class PlayerMovement : MonoBehaviour
 
     void move(){
         if (horizintalValue >0){
-            playerAnimator.SetBool("Walking Right" , true);
-            
+            playerAnimator.SetBool("Walking Left" , true);
+            GetComponent<SpriteRenderer>().flipX = true;
             }
         else if (horizintalValue <0){
             playerAnimator.SetBool("Walking Left" , true);
-            
-            }
-        else{ 
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        { 
             playerAnimator.SetBool("Walking Right" , false);
             playerAnimator.SetBool("Walking Left" , false);
             }
