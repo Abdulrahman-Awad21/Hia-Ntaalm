@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Situations/Levels/Street/Scene/ThrowRubbish.unity
     guid: 3bba0b624e0a52a44b12cbc763491f45
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/Street/Scene/Park.unity
+    guid: dad7a6d0887d4d74c8443b6d0863506b
   m_configObjects: {}

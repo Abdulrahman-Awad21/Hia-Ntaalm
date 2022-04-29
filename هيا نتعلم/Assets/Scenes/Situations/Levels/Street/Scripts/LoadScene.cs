@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public bool street = false ,icecream = false;
+    public bool street = false ,icecream = false,park = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") ){
@@ -14,9 +14,12 @@ public class LoadScene : MonoBehaviour
                 SceneManager.LoadScene("ThrowRubbish");
                 }
             else if (icecream){
-                Debug.Log("Icecream");
+                
                 SceneManager.LoadScene("Traffic Light");
                 }
+            else if (park){
+                SceneManager.LoadScene("Park");
+            }
         }
     }
 }
