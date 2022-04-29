@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class Loadingadvice : MonoBehaviour
 {
     public Text txt;
-    string[] adv = { "Get vaccinated as soon as it’s your turn and follow local guidance on vaccination."
-            , "Keep physical distance of at least 1 metre from others, even if they don’t appear to be sick. Avoid crowds and close contact."
+    string[] adv = { "Get vaccinated as soon as itï¿½s your turn and follow local guidance on vaccination."
+            , "Keep physical distance of at least 1 metre from others, even if they donï¿½t appear to be sick. Avoid crowds and close contact."
             , "Wear a properly fitted mask when physical distancing is not possible and in poorly ventilated settings."
             , "Clean your hands frequently with alcohol-based hand rub or soap and water.",
         "Cover your mouth and nose with a bent elbow or tissue when you cough or sneeze. Dispose of used tissues immediately and clean hands regularly. ",
