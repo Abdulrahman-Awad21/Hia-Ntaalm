@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Runner/SampleScene.unity
     guid: 7b1691ae23a93b54290ba931c80c8623
   - enabled: 1
+    path: Assets/Scenes/Guess The Feelings/Assets/Scenes/SceneV2.unity
+    guid: 22fb2955f2ce5544bb0c293c4eb472b9
+  - enabled: 1
     path: Assets/Scenes/Runner/Loading.unity
     guid: 4d24ac3507301e943bc0c3bd4ad413da
   - enabled: 1
