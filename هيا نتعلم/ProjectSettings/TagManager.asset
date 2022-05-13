@@ -9,6 +9,7 @@ TagManager:
   - BT1
   - Ground
   - Rubbish
+  - wall right
   layers:
   - Default
   - TransparentFX
