@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovmentStreet : MonoBehaviour
+public class PlayerMovementRubbish : MonoBehaviour
 {
-    public float speed ;
+        public float speed ;
 
     private Rigidbody rb;
 
@@ -28,20 +28,21 @@ public class PlayerMovmentStreet : MonoBehaviour
 
     void move(){
         if (horizintalValue >0){
-            playerAnimator.SetBool("Walking Right" , true);
+            playerAnimator.SetBool("Walk With Rubbish" , true);
             float directionX = Input.GetAxisRaw("Horizontal");
             playerDirection = new Vector2(directionX, 0).normalized;
-            
+            GetComponent<SpriteRenderer>().flipX = true;
             }
         else if (horizintalValue <0){
-            playerAnimator.SetBool("Walking Left" , true);
+            playerAnimator.SetBool("Walk With Rubbish" , true);
             float directionX = Input.GetAxisRaw("Horizontal");
             playerDirection = new Vector2(directionX, 0).normalized;
+            GetComponent<SpriteRenderer>().flipX = false;
             
             }
         else{ 
-            playerAnimator.SetBool("Walking Right" , false);
-            playerAnimator.SetBool("Walking Left" , false);
+            playerAnimator.SetBool("Walk With Rubbish" , false);
+            playerAnimator.SetBool("Walk With Rubbish" , false);
             }
 
         
@@ -59,5 +60,4 @@ public class PlayerMovmentStreet : MonoBehaviour
         rb.velocity = new Vector2(playerDirection.x * speed,0);
     }
     
-
 }
