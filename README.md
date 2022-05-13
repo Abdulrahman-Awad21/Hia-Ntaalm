@@ -22,3 +22,15 @@ Games:
       game has no ending as it repeats it self
       the game is designed for autisms kids to help them express their feeling
     + Created By Hazem Azzam
+  - School path
+    + School path is a mini-game aims to teach children good and bad things happens at the school
+    + developed by Omar khames and Hazem azzam
+    + Omar khames 
+      + designed the UI, Buttons, and Classrooms
+      +  wrote the story at each classroom
+      +  wrote the camera and player movement scripts
+    + Hazem azzam 
+      + allowed the player to enter the Classrooms by knocking on the door
+      + added the check answers to the teacher story at each classroom
+      + added music after each answer selection
+      + wrote the sceneLoader and checkAnswer scripts

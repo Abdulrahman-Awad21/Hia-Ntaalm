@@ -7,6 +7,8 @@ TagManager:
   - button
   - Gimage
   - BT1
+  - Ground
+  - Rubbish
   layers:
   - Default
   - TransparentFX

@@ -27,5 +27,9 @@ public class LoadScenes : MonoBehaviour
         SceneManager.LoadScene("UI");
     }
 
+    public void playSituations(){
+        SceneManager.LoadScene("Situations");
+    }
+
     
 }
