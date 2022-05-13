@@ -28,6 +28,7 @@ Games:
     + Omar khames 
       + designed the UI, Buttons, and Classrooms
       +  wrote the story at each classroom
+      +  wrote the camera and player movement scripts
     + Hazem azzam 
       + allowed the player to enter the Classrooms by knocking on the door
       + added the check answers to the teacher story at each classroom
