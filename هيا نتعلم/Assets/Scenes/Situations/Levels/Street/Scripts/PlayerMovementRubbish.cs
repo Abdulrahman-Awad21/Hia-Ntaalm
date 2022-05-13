@@ -42,7 +42,6 @@ public class PlayerMovementRubbish : MonoBehaviour
             }
         else{ 
             playerAnimator.SetBool("Walk With Rubbish" , false);
-            playerAnimator.SetBool("Walk With Rubbish" , false);
             }
 
         

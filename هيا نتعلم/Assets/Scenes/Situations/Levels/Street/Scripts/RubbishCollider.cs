@@ -6,7 +6,7 @@ public class RubbishCollider : MonoBehaviour
 {
     public string targetTag;
     public TargetToAct target;
-    public enum TargetToAct{ Basket, Ground}
+    public enum TargetToAct{Ground}
 
     private Animator playerAnimator;
     [SerializeField] private Animator myAnimationContoller;
@@ -14,7 +14,7 @@ public class RubbishCollider : MonoBehaviour
 
         if(collision.gameObject.tag == targetTag){
 
-            if(target == TargetToAct.Basket){
+            if(target == TargetToAct.Ground){
 
                 myAnimationContoller.SetBool("Happy Jump",true);
             }
