@@ -33,3 +33,4 @@ Games:
       + allowed the player to enter the Classrooms by knocking on the door
       + added the check answers to the teacher story at each classroom
       + added music after each answer selection
+      + wrote the sceneLoader and checkAnswer scripts
