@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CatMove : MonoBehaviour
 {
-    private bool flag=true;
+    
    public float speed ;
 
     private Rigidbody rb;
@@ -20,10 +20,7 @@ public class CatMove : MonoBehaviour
 
     }
     
-    // Update is called once per frame
-    private void Start() {
-        // move();
-    }
+    
     private void Update() {
         move();
     }
