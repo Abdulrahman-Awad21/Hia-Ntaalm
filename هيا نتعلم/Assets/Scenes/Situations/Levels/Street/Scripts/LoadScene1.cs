@@ -5,7 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene1 : MonoBehaviour
 {
-     public void playPark()
+    public void home()
+    {
+        SceneManager.LoadScene("Situations");
+    }
+    public void mainhome()
+    {
+        SceneManager.LoadScene("Main Menu Scene");
+    }
+    public void playPark()
     {
         SceneManager.LoadScene("Park");
     }

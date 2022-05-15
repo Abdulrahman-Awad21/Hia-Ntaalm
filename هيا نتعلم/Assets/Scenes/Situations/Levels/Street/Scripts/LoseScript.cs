@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoseScript : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") ){
