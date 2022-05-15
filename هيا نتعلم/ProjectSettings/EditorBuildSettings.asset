@@ -8,21 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu/Main Menu Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Ar Alphabet/Ar Alphabet.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Color/color.unity
     guid: 42d89b35b90963f4995581cc5ce84397
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/En Alphabets/En Alphabets.unity
     guid: 818a6d0dbd2dffe449e3b6039d50f9a4
@@ -38,18 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Runner/SampleScene.unity
     guid: 7b1691ae23a93b54290ba931c80c8623
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Runner/Loading.unity
     guid: 4d24ac3507301e943bc0c3bd4ad413da
   - enabled: 1
     path: Assets/Scenes/Situations/Situations.unity
     guid: 50b1416323de66b449f6743e1f7a3be8
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Situations/Levels/School/Classroom 1.unity
     guid: 0f808a296e1e2b54691f1bbbbbd4547f
@@ -65,4 +50,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Situations/Levels/School/School.unity
     guid: 67763d714775a564cbe9b38d4bcc04dc
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/Street/Scene/Traffic Light.unity
+    guid: 7f62d5b823ad02f43a33e81cb3b27dab
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/Street/Scene/Park.unity
+    guid: dad7a6d0887d4d74c8443b6d0863506b
+  - enabled: 1
+    path: Assets/Scenes/Situations/Levels/Street/Scene/ThrowRubbish.unity
+    guid: 3bba0b624e0a52a44b12cbc763491f45
   m_configObjects: {}

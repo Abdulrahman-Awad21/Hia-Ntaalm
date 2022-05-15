@@ -28,19 +28,20 @@ public class PlayerMovmentStreet : MonoBehaviour
 
     void move(){
         if (horizintalValue >0){
-            playerAnimator.SetBool("Walking Right" , true);
+            
+            playerAnimator.SetBool("Walking Left" , true);
             float directionX = Input.GetAxisRaw("Horizontal");
             playerDirection = new Vector2(directionX, 0).normalized;
-            
+            GetComponent<SpriteRenderer>().flipX = true;
             }
         else if (horizintalValue <0){
             playerAnimator.SetBool("Walking Left" , true);
             float directionX = Input.GetAxisRaw("Horizontal");
             playerDirection = new Vector2(directionX, 0).normalized;
-            
+            GetComponent<SpriteRenderer>().flipX = false;
             }
         else{ 
-            playerAnimator.SetBool("Walking Right" , false);
+            playerAnimator.SetBool("Walking Left" , false);
             playerAnimator.SetBool("Walking Left" , false);
             }
 

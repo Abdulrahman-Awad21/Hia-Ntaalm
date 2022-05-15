@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Speech : MonoBehaviour, IPointerEnterHandler
 {
-    int counter = 0;
+    // int counter = 0;
     private string mainDirectory = "Assets/Scenes/Learing_English/Assets/Resources/Sounds/";
     //public void OnMouseDown()
     //{

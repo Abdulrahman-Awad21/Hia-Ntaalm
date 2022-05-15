@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RappishThrowTrigger : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class RappishThrowTrigger : MonoBehaviour
     [SerializeField] private Animator myAnimationContoller;
 
     public bool basket,ground;
+    
+    public GameObject Sound;
     private IEnumerator  OnTriggerEnter(Collider other)
     {
         if (basket){
@@ -24,7 +27,7 @@ public class RappishThrowTrigger : MonoBehaviour
         else if (ground){
 
              if (other.CompareTag("Rubbish") ){
-                
+                SceneManager.LoadScene("ThrowRubbish");   
                 Debug.Log("BadBoy");
                 }
                 

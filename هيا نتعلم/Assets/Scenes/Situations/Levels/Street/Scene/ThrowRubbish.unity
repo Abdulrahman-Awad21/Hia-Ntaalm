@@ -778,6 +778,7 @@ MonoBehaviour:
   myAnimationContoller: {fileID: 7045726036438627621}
   basket: 0
   ground: 1
+  Sound: {fileID: 0}
 --- !u!23 &908673379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -876,6 +877,7 @@ MonoBehaviour:
   myAnimationContoller: {fileID: 7045726036438627621}
   basket: 1
   ground: 0
+  Sound: {fileID: 0}
 --- !u!136 &1071187920
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1186,6 +1188,7 @@ MonoBehaviour:
   myAnimationContoller: {fileID: 7045726036438627621}
   basket: 0
   ground: 1
+  Sound: {fileID: 0}
 --- !u!23 &1234119718
 MeshRenderer:
   m_ObjectHideFlags: 0
