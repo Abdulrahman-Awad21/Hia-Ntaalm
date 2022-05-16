@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Feed : MonoBehaviour
 {
-   
+    
+    public GameObject FinalUI;
     public GameObject Bowl;
     public Transform fireSpawnPointLeft;
     public Transform fireSpawnPointRight;    
@@ -59,6 +60,8 @@ public class Feed : MonoBehaviour
             playerAnimator.SetBool("Happy Jump",true);
             yield return (new WaitForSeconds(1.5f));
             playerAnimator.SetBool("Happy Jump",false);
+            FinalUI.SetActive(true);
+            
 
    }
 }
