@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class LoseScript : MonoBehaviour
 {
 
+    public GameObject LoseUI;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") ){
-               SceneManager.LoadScene("Traffic Light");   
+               LoseUI.SetActive(true);
             
         }
     }

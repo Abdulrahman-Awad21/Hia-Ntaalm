@@ -9,29 +9,41 @@ public class RappishThrowTrigger : MonoBehaviour
     [SerializeField] private Animator myAnimationContoller;
 
     public bool basket,ground;
+    public AudioSource source;
+    public AudioClip YayAudio;
+
+    public GameObject LoseUI;
     
-    public GameObject Sound;
-    private IEnumerator  OnTriggerEnter(Collider other)
+    
+    private void  OnTriggerEnter(Collider other)
     {
         if (basket){
             if (other.CompareTag("Rubbish") ){
                 
                 Debug.Log("Yaaaaaaaaaay");
-                myAnimationContoller.SetBool("Happy Jump",true);
-                yield return (new WaitForSeconds(1.5f));
-                myAnimationContoller.SetBool("Happy Jump",false);
-                Destroy(other.gameObject);
+                source.PlayOneShot(YayAudio);
+                StartCoroutine( happy(other));
+                // Destroy(other.gameObject);
                 
             }
         }
         else if (ground){
-
+            
              if (other.CompareTag("Rubbish") ){
-                SceneManager.LoadScene("ThrowRubbish");   
-                Debug.Log("BadBoy");
+                
+                LoseUI.SetActive(true);
                 }
                 
 
         }
+    }
+
+    private IEnumerator happy(Collider co){
+                myAnimationContoller.SetBool("Happy Jump",true);
+                yield return (new WaitForSeconds(1.5f));
+                Destroy(co.gameObject);
+                myAnimationContoller.SetBool("Happy Jump",false);
+                // myAnimationContoller.SetBool("Walk With Rubbish",false);
+                // myAnimationContoller.SetBool("Walking Left",true);
     }
 }

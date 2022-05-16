@@ -14,6 +14,10 @@ public class Throw : MonoBehaviour
 
     private bool isthrown = false;
 
+
+    public bool isThrown(){
+        return isthrown;
+    }
     private void Awake() {
         playerAnimator = GetComponentInChildren<Animator>();
     }
