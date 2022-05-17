@@ -6,17 +6,25 @@ using UnityEngine.SceneManagement;
 public class Directions : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject previos, next,play,pause;
+    
     private GameObject[] pages = new GameObject[36];
     private int currentPage = 0;
+    
 
     void Start(){
         for (int i = 1; i <= 36; i++){
             pages[i-1] = GameObject.Find("p" + i);
         }
-        
+
         for (int i = 0; i < 36; i++){
             pages[i].SetActive(false);
         }
+        previos.SetActive(false);
+        next.SetActive(false);
+        play.SetActive(false);
+        pause.SetActive(false);
     }
 
     public void home() 
@@ -30,8 +38,9 @@ public class Directions : MonoBehaviour
 
     public void startStory(int c)
     {
-        GameObject.Find("white").SetActive(false);
-        GameObject.Find("white(1)").SetActive(false);
+        next.SetActive(true);
+        play.SetActive(true);
+        pause.SetActive(true);
         GameObject.Find("FingerTip").SetActive(false);
         GameObject.Find("GoldenAxe").SetActive(false);
         GameObject.Find("RabbitTirtle").SetActive(false);
@@ -63,23 +72,36 @@ public class Directions : MonoBehaviour
     }
 
     public void nextActive(){
+        previos.SetActive(true);
         if (currentPage < 32)
         {
             pages[currentPage].SetActive(false);
             pages[currentPage + 4].SetActive(true);
             currentPage += 4;
         }
-        else {}
+        if(currentPage>27)
+            next.SetActive(false);
     }
     
     public void previousActive(){
+        next.SetActive(true);
+        if(currentPage==7|| currentPage == 6|| currentPage == 5|| currentPage == 4)
+            previos.SetActive(false);
         if (currentPage > 3 )
         {
             pages[currentPage - 4].SetActive(true);
             pages[currentPage].SetActive(false);
             currentPage -= 4;
         }
-        else { }
+        
     }
 
+    public void playAudio()
+    {
+        pages[currentPage].GetComponent<AudioSource>().Play();
+    }
+    public void pauseAudio()
+    {
+        pages[currentPage].GetComponent<AudioSource>().Pause();
+    }
 }
