@@ -7,7 +7,7 @@ public class HouseLogic : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float playerSpeed = 2.0f; //,jump=10f;
+    private float playerSpeed = 1.1f; //,jump=10f;
     [SerializeField]
     private GameObject bath,room,home,kitchen,boy, popUpMsg,glass,soap,knife,roomS,bathS,kitchenS;
 
@@ -42,7 +42,7 @@ public class HouseLogic : MonoBehaviour
         if (!glass.activeInHierarchy && !knife.activeInHierarchy && !soap.activeInHierarchy)
         { 
             inPopUp = false;
-            playerSpeed = 2;
+            playerSpeed = 1.1f;
         }
 
     }
