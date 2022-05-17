@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Rubbish
   - wall right
+  - glass PopUp
   layers:
   - Default
   - TransparentFX
