@@ -31,6 +31,15 @@ Games:
     + The Main Scene includes the game, by moving the plane in all directions and generating random objects (enemies that looks like corona), with automatic background movement and also a counter to calculate the score.
     + Created by Omar Khamis Allam
 
+  - Arabic_letter_Game
+      + There are pictures of animals with letters that express the animal in the picture, 
+      + there is one button above each pictur, When you press it; a sound appears that pronounces the letter in the pictures, 
+      + mentioning the name of the animal in the pictures. 
+      + There are two  buttons below the pictures as the form of an arrow when you click on it, we can move between images and letters, 
+      + and when we reach the end of the letters, there is a back button through which we can return to the beginning of the letters and use the game again, 
+      + and there is also an exit button From the game so that we can move between other games that are with us.
+      + Developed by Abdo Mostafa
+  
   - School path
     + School path is a mini-game aims to teach children good and bad things happens at the school
     + developed by Omar khamis Allam and Hazem azzam
@@ -43,3 +52,4 @@ Games:
       + added the check answers to the teacher story at each classroom
       + added music after each answer selection
       + wrote the sceneLoader and checkAnswer scripts
+   
