@@ -18,6 +18,7 @@ public class Player2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float directionY = Input.GetAxisRaw("Vertical");
         float directionX = Input.GetAxisRaw("Horizontal");
         playerDirection = new Vector2(directionX, directionY).normalized;

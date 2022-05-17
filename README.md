@@ -6,7 +6,7 @@ Members:
   - Abdo Mustafa  Computer Science Student
   - Hiesham Alaa  Computer Science Student
   - Hazem Azzam   Computer Science and Pure Mathematics Student
-  - Omar Khames   Computer Science and Pure Mathematics Student
+  - Omar Allam   Computer Science and Pure Mathematics Student
 
 The project will be a collection of games, such that every member will be resposible for a game of his Idea
 
@@ -22,10 +22,19 @@ Games:
       game has no ending as it repeats it self
       the game is designed for autisms kids to help them express their feeling
     + Created By Hazem Azzam
+  
+  - Speed Runner (Corona virus awareness)
+    + Displays images, animations, and objects that move through scripts.
+    + It aims to raise awareness about COVID-19.
+    + Loading Scene has been developed with awareness tips that appear randomly via script. 
+    + Also, UI Scene was initially set to move between Scenes via script.
+    + The Main Scene includes the game, by moving the plane in all directions and generating random objects (enemies that looks like corona), with automatic background movement and also a counter to calculate the score.
+    + Created by Omar Khamis Allam
+
   - School path
     + School path is a mini-game aims to teach children good and bad things happens at the school
-    + developed by Omar khames and Hazem azzam
-    + Omar khames 
+    + developed by Omar khamis Allam and Hazem azzam
+    + Omar khamis Allam 
       + designed the UI, Buttons, and Classrooms
       +  wrote the story at each classroom
       +  wrote the camera and player movement scripts
