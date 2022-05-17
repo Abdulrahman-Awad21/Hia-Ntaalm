@@ -39,8 +39,6 @@ public class Directions : MonoBehaviour
     public void startStory(int c)
     {
         next.SetActive(true);
-        play.SetActive(true);
-        pause.SetActive(true);
         GameObject.Find("FingerTip").SetActive(false);
         GameObject.Find("GoldenAxe").SetActive(false);
         GameObject.Find("RabbitTirtle").SetActive(false);
@@ -73,6 +71,8 @@ public class Directions : MonoBehaviour
 
     public void nextActive(){
         previos.SetActive(true);
+        play.SetActive(true);
+        pause.SetActive(true);
         if (currentPage < 32)
         {
             pages[currentPage].SetActive(false);
@@ -85,8 +85,12 @@ public class Directions : MonoBehaviour
     
     public void previousActive(){
         next.SetActive(true);
-        if(currentPage==7|| currentPage == 6|| currentPage == 5|| currentPage == 4)
+        if (currentPage == 7 || currentPage == 6 || currentPage == 5 || currentPage == 4)
+        { 
             previos.SetActive(false);
+            play.SetActive(true);
+            pause.SetActive(true);
+        }
         if (currentPage > 3 )
         {
             pages[currentPage - 4].SetActive(true);
