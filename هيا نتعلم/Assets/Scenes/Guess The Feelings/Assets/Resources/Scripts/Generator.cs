@@ -74,7 +74,7 @@ public class Generator : MonoBehaviour
     private List<Question> AllQuestions = new List<Question>(); // always store all questions for taking random wrong answers
     private FullQuestion fullQuestion = new FullQuestion();   // structure contains image, right answer, and two wrong answers
     Button rightButton;
-
+    GameObject go = null;
     private string mainDirectory = "Assets/Scenes/Guess The Feelings/Assets/Resources/Images";
     public AudioClip right, wrong;
     AudioSource audioSource;
@@ -90,7 +90,8 @@ public class Generator : MonoBehaviour
     {
         pickPlayers = GameObject.FindGameObjectWithTag("pickPlayersPanel");
         mainCanvas = GameObject.FindGameObjectWithTag("mainCanvas");
-
+        go = GameObject.Find("Github");
+        Debug.Log(go);
         playerControl.start();
     }
 
@@ -100,7 +101,7 @@ public class Generator : MonoBehaviour
         pickPlayers.SetActive(false);
         mainCanvas.SetActive(true);
         playerControl.displayPlayers(players);
-
+        go = GameObject.Find("Github").GetComponent<GameObject>();
         loadFiles();
         //getImages();
         AllQuestions = new List<Question>(questions);
