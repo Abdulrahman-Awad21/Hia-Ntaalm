@@ -57,12 +57,12 @@ Games:
       + Created by Abdulrahman Awwad
   
   - Arabic Numbers
-    +There are pictures that show the basic numbers from one to nine
-    +There are pictures of different things such as fruits and toys representing each number and sound to teach the pronunciation of each number       from one to nine
-    +There are two buttons in the form of arrows to move between numbers
-    +There is a part to learn to add from two to nine with all possible possibilities
-    +There is a part to learn to addation from one to nine with all possible possibilities
-    +developed by Ahmed mahmoued
+    + There are pictures that show the basic numbers from one to nine
+    + There are pictures of different things such as fruits and toys representing each number and sound to teach the pronunciation of each number       from one to nine
+    + There are two buttons in the form of arrows to move between numbers
+    + There is a part to learn to add from two to nine with all possible possibilities
+    + There is a part to learn to addation from one to nine with all possible possibilities
+    + developed by Ahmed mahmoued
     
   - School path
     + School path is a mini-game aims to teach children good and bad things happens at the school
