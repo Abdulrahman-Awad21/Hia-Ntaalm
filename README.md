@@ -11,6 +11,15 @@ Members:
 The project will be a collection of games, such that every member will be resposible for a game of his Idea
 
 Games:
+  - MainMenu
+    + The main menu of the project with good    navigation buttons to every scene in the game
+    + Load Scenes Scripts 
+    + Background related to the subject
+    + Fancy Buttons to each Scene
+    + Make game Arabic Language Based
+    + Add the plane movement animation from the Runner scene (by Omar Khamis )to the main menu 
+    + Created by Abdulrahman Awwad
+     
   - Learning_English Game
     + Display Pictures of Fruits or Animals, and 3 Buttons one Button contains the right Description of the picture, and the others is wrong
       so the children must select only one button which descripes the Picture
@@ -40,6 +49,13 @@ Games:
       + and there is also an exit button From the game so that we can move between other games that are with us.
       + Developed by Abdo Mostafa
   
+  - English  Alphabets
+      + Aims to tech the child the English alphabets and how to spell it with some Object related to each alphabet 
+      + Create Classroom Environment with cartoon lamb character that spell each character
+      + Add Object Related To each alphabet
+      + Navigator to navigate all characters with next and back button and navigation Script 
+      + Created by Abdulrahman Awwad
+   
   - School path
     + School path is a mini-game aims to teach children good and bad things happens at the school
     + developed by Omar khamis Allam and Hazem azzam
@@ -52,4 +68,19 @@ Games:
       + added the check answers to the teacher story at each classroom
       + added music after each answer selection
       + wrote the sceneLoader and checkAnswer scripts
-   
+     
+  - Street
+    + Street is a shot scene aims to teach the kids how to behave in the street 
+    + developed by Abdulrahman Awwad & Abdulrahman Mustafa
+    + Abdulrahman Awwad 
+      + designed the Boy character, it’s Animations(Move, Jump , Move with packet, Feed and Drop Packet) and their action scripts
+      + Make the boy a prefab
+      + Design Traffic Light and it’s  switch every five seconds from red to green or from green to red
+      + Add Triggers To every event
+    + Abdulrahman Mustafa
+      + Design The Vision and the environment of each Street Scene
+      + UI and Sound effects 
+      + The Idea of each scene
+      + Transactions Script
+      + Assets and Useful Resources such background and Audios
+      + Wrote the sceneLoader scripts
