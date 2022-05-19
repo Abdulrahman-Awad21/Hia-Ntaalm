@@ -30,6 +30,9 @@ public class LoadScenes : MonoBehaviour
     public void playSituations(){
         SceneManager.LoadScene("Situations");
     }
-
+    public void closeApp()
+    {
+        Application.Quit();
+    }
     
 }
