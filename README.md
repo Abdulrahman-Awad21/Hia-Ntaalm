@@ -1,7 +1,7 @@
 Ain Shams University, Faculty of Science
 Project: Game to teach Childrens English and Numbers
 Members:
-  - Abdo Awad     Computer Science Student
+  - AbdulRahman Awad     Computer Science Student
   - Ahmed Mahmoud Computer Science Student
   - Abdo Mustafa  Computer Science Student
   - Hiesham Alaa  Computer Science Student
