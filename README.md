@@ -101,3 +101,16 @@ Games:
       + Transactions Script
       + Assets and Useful Resources such as background and Audio
       + Wrote the sceneLoader scripts
+
+  - Home
+    + Within our homes there are a lot of situations that might be harmful to our children so this mini-game came so that we can explore it with our children.
+    + Home is a mini-game that aims to teach children what to do in dangerous situations that happen to them in the home.
+    + developed by Hisham Alaa and Ahmed Mahmoud
+    + Hisham Alaa
+      + allowed the player to move into the home.
+      + Reaction for what to do in this situation.
+      + Wrote the HouseLogic scripts
+    + Ahmed Mahmoud
+      + UI and Sound effects.
+      + The Idea of each scene
+      + Assets and Useful Resources such as background and Audio
